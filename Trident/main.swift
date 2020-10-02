@@ -1,47 +1,39 @@
-//
-//  Trident
-//
-//  Puzzle description available at:
-//
-//  https://www.russellgordon.ca/incomplete-puzzles/trident.pdf
-//
-//  NOTE: Puzzle adapted from material provided by the University of Waterloo.
+// This is a trident problem
+print("T? ")
+let t = Int(readLine()!)!
+print("S? ")
+let s = Int(readLine()!)!
+print("H? ")
+let h = Int(readLine()!)!
 
-import Foundation
-
-print("Trident")
-print("=======")
-
-// INPUT
-
-// Get tine length
-print("Enter tine length:")
-print("   ", terminator: "")
-let tineLength = Int(readLine()!)!
-
-// Get tine spacing
-print("Enter tine spacing:")
-print("   ", terminator: "")
-let spacing = Int(readLine()!)!
-
-// OUTPUT
-
-// Produce top of trident according to length given
-for _ in 1...tineLength {
-    // Print the tines
-    for _ in 1...3 {
-        
-        // Print part of a tine
-        print("*", terminator: "")
-        
-        // Print space between tines
-        for _ in 1...spacing {
-            print(" ", terminator: "")
-        }
-        
+print("\nTRIDENT\n===========================================\n\n")
+func add_space(mes: String, space: Int) -> String{
+    var mes = mes
+    for _ in 1...space{
+        mes += " "
     }
-    // Go to next line of output
-    print("")
+    return mes
 }
 
 
+var a:String
+for _ in 1...t{
+    a = "*"
+    for _ in 1...2{
+        a = add_space(mes: a, space: s)
+        a += "*"
+    }
+    print(a)
+}
+
+a = ""
+for _ in 1...((s*2)+3){
+    a += "*"
+}
+print(a)
+
+for _ in 1...h{
+    a = ""
+    a = add_space(mes: a, space: (1 + s))
+    print(a+"*")
+}
