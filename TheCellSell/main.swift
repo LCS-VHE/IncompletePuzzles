@@ -192,9 +192,9 @@ class KMeans{
 
 var data = [Vector]()
 for _ in 0...100000{
-    data.append(Vector(vets: [Double.random(in: -100...100), Double.random(in: -100...100)] ))
+    data.append(Vector(vets: [Double.random(in: -1000...1000), Double.random(in: -1000...100)] ))
 }
 
-var kmean = KMeans(data: data, numCen: 4)
-kmean.fit(epochs: 100)
+var kmean = KMeans(data: data, numCen: 2)
+kmean.fit(epochs: 1000)
 
