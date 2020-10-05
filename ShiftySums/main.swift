@@ -22,12 +22,22 @@ let n = Int(readLine()!)!
 let k = 3
 
 // PROCESS
+func p10(k: Int) -> Int{
+    var result: Int = 1
+    
+    if k>0{
+        for _ in 1...k{
+            result = result * 10
+        }
+    }
+    return result
+}
 
 // Shift the given number "k" number of times
-var output = n
-output += n * 10
-output += n * 10 * 10
-output += n * 10 * 10 * 10
+var output = 0
+for i in 0...k{
+    output += p10(k: i) * n
+}
 
 // OUTPUT
 print(output)
