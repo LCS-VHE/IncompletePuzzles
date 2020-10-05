@@ -64,6 +64,3 @@ for i in lower...upper{
 }
 
 print("The number of RSA numbers between \(lower) and \(upper): \(String(rsa.count))")
-for num in ras{
-    print("\(num) is a ras number")
-}
