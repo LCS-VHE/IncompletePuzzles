@@ -16,7 +16,7 @@ print("==============")
 // INPUT
 
 // Ask for a phrase
-var phrases =  [["CU", "see you"],
+let phrases =  [["CU", "see you"],
                 [":-)", "I’m happy"],
                 [":-(", "I’m unhappy"],
                 [";-)", "wink"],
