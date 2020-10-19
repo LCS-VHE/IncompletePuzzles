@@ -16,12 +16,38 @@ print("===========")
 // INPUT
 
 // Get lower limit of range
-print("Enter lower limit of range")
-let lower = Int(readLine()!)!
+var lower = 0
+var upper = 0
 
-// Get upper limit of range
-print("Enter upper limit of range")
-let upper = Int(readLine()!)!
+while true{
+    print("Enter lower limit of range")
+    guard let a = readLine() else{
+        continue
+    }
+    
+    print("Enter upper limit of range")
+    guard let b = readLine() else{
+        continue
+    }
+    
+    guard let ba = Int(b) else{
+        continue
+    }
+    
+    guard let aa = Int(a) else{
+        continue
+    }
+    
+    if aa > ba{
+        continue
+    }
+    
+    lower = aa
+    upper = ba
+    break
+}
+
+
 
 // PROCESS
 
