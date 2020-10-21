@@ -1,10 +1,37 @@
-// This is a trident problem
-print("T? ")
-let t = Int(readLine()!)!
-print("S? ")
-let s = Int(readLine()!)!
-print("H? ")
-let h = Int(readLine()!)!
+var t = 0
+var s = 0
+var h = 0
+
+while true{
+    print("T? ")
+
+    guard let tinput = readLine() else{
+        continue
+    }
+    guard let t_ = Int(tinput) else{
+        continue
+    }
+    t = t_
+    
+    print("S? ")
+    guard let sinput = readLine() else{
+        continue
+    }
+    guard let s_ = Int(sinput) else{
+        continue
+    }
+    s = s_
+    
+    print("H? ")
+    guard let hinput = readLine() else{
+        continue
+    }
+    guard let h_ = Int(hinput) else{
+        continue
+    }
+    h = h_
+    break
+}
 
 print("\nTRIDENT\n===========================================\n\n")
 func add_space(mes: String, space: Int) -> String{
