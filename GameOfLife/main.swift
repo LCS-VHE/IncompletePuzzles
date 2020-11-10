@@ -8,7 +8,7 @@
 import Foundation
 
 let ALIVE_CELL = 1
-let DEADE_CELL = 0
+let DEAD_CELL = 0
 
 class Windows {
     func print_state(state: [[Int]]){
@@ -61,7 +61,7 @@ func alive_or_dead(row:Int, column:Int, state:[[Int]]) -> Bool{
         }
     }
     
-    if state[row][column] == DEADE_CELL{
+    if state[row][column] == DEAD_CELL{
         if n_count == 3 {
             return true
         } else {
@@ -85,7 +85,7 @@ func update_state(state:[[Int]]) -> [[Int]]{
             if alive_or_dead(row:row, column: column, state: state){ // True is alive
                 updated_state[row][column] = ALIVE_CELL
             }else{
-                updated_state[row][column] = DEADE_CELL
+                updated_state[row][column] = DEAD_CELL
 
             }
         }
@@ -98,11 +98,11 @@ func update_state(state:[[Int]]) -> [[Int]]{
 var win = Windows()
 var dead:Bool = false
 var state = [
-    [0, 0, 0, 0, 0],
-    [0, 1, 1, 1, 0],
-    [0, 1, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1],
+    [0, 0, 0, 0, 1, 1]
 ]
 var new_state = [[Int]]()
 
@@ -110,5 +110,4 @@ while !dead{
     new_state = update_state(state: state)
     state = new_state
     win.print_state(state: state)
-    
 }
